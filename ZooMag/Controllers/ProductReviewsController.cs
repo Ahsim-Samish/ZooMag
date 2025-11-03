@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PetStoreApi.Data;
-using PetStoreApi.Models;
+using ProductStoreApi.Data;
+using ProductStoreApi.Models;
 
-namespace PetStoreApi.Controllers;
+namespace ProductStoreApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

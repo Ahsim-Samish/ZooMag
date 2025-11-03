@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetStoreApi.Models;
+using ProductStoreApi.Models;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace PetStoreApi.Data;
+namespace ProductStoreApi.Data;
 
 public class ApplicationDbContext : DbContext
 {

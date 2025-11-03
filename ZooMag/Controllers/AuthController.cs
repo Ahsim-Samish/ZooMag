@@ -2,14 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using PetStoreApi.Data;
-using PetStoreApi.DTOs;
-using PetStoreApi.Models;
+using ProductStoreApi.Data;
+using ProductStoreApi.DTO;
+using ProductStoreApi.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace PetStoreApi.Controllers;
+namespace ProductStoreApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
