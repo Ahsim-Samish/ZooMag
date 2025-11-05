@@ -22,3 +22,12 @@ public class User
     public virtual ICollection<DeliveryInfo> DeliveryInfos { get; set; } = new List<DeliveryInfo>();
     public virtual ICollection<ProductReview> Reviews { get; set; } = new List<ProductReview>();
 }
+public class Person
+{
+    public string Name { get; set; } = string.Empty;
+    public string MiddleName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
+    public DateTime BirthDate { get; set; }
+    public int Age { get; set; } = 0;
+
+}

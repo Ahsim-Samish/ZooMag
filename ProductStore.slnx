@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="Tests/Tests.csproj" Id="7c58ed83-5986-4eec-8956-1df2e0573cdc" />
   <Project Path="ZooMag/ProductStoreApi.csproj" />
 </Solution>
