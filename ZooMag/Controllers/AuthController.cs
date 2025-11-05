@@ -13,7 +13,7 @@ namespace PetStoreApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthController : ControllerBase
+public class AuthController : ControllerBase // Inherits from ControllerBase to create a Web API controller
 {
     private readonly ApplicationDbContext _context;
     private readonly IConfiguration _configuration;
