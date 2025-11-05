@@ -28,7 +28,7 @@ public class AuthController : ControllerBase
     public async Task<ActionResult<AuthResponseDto>> Register(RegisterDto request)
     {
         if (_context.Users.Any(u => u.Email == request.Email))
-            return BadRequest("Email already exists.");
+            return BadRequest("Такой адрес электронной почты уже зарегестрирован.");
 
         // Хэшируем пароль
         string passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
