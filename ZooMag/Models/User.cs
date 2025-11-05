@@ -27,7 +27,7 @@ public class Person
     public string Name { get; set; } = string.Empty;
     public string MiddleName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
-    public DateTime BirthDate { get; set; }
+    public DateOnly BirthDate { get; set; }
     public int Age { get; set; } = 0;
 
 }

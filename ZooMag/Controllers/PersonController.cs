@@ -8,42 +8,45 @@ using ProductStoreApi.Models;
 public class PersonController : ControllerBase
 {
 
-    [HttpGet]
-    public async Task<ActionResult<Person>> GetUsers()
+    public async Task<ActionResult<Person>> GetUsers(Person request)
     {
         Person person = new Person
         {
-            BirthDate = new DateTime(1999, 12, 7),
-            Name = "John Doe",
-            MiddleName = "Middle",
-            LastName = "Smith"
+            BirthDate = new DateOnly(2006, 5, 8),
+            Name = "Александр",
+            MiddleName = "Петрович",
+            LastName = "Овечкин"
 
         };
-        return person;
-    }
-    [HttpGet("Age")]
-    public async Task<ActionResult<Person>> GetUser1s()
-    {
-        Person person = new Person
+        if (request != null)
         {
-            BirthDate = new DateTime(1999, 12, 7),
-            Name = "John Doe",
-            MiddleName = "Middle",
-            LastName = "Smith"
+            if (!string.IsNullOrWhiteSpace(request.Name) && request.Name != "string")
+                person.Name = request.Name;
 
-        };
-        DateTime today = DateTime.Today;
-        int age = today.Year - person.BirthDate.Year;
+            if (!string.IsNullOrWhiteSpace(request.MiddleName) && request.Name != "string")
+                person.MiddleName = request.MiddleName;
 
-        // Adjust the age if the birthday hasn't occurred yet this year
-        if (person.BirthDate.Date > today.AddYears(-age))
-        {
-            age--;
+            if (!string.IsNullOrWhiteSpace(request.LastName) && request.Name != "string")
+                person.LastName = request.LastName;
+
+            DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+
+            if (request.BirthDate != today)
+                person.BirthDate = request.BirthDate;
+
+            int age = today.Year - person.BirthDate.Year;
+
+            if (person.BirthDate > today.AddYears(-age))
+            {
+                age--;
+            }
+
+
+            person.Age = age;
+
         }
 
-        // The 'age' variable now holds the correct age in years
 
-        person.Age = age;
         return person;
     }
 }
