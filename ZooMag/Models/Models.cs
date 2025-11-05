@@ -81,3 +81,12 @@ public class ProductReview
     public int UserId { get; set; }
     public virtual User User { get; set; } = null!;
 }
+public class Person
+{
+    public string Name { get; set; } = string.Empty;
+    public string MiddleName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
+    public DateOnly BirthDate { get; set; }
+    public int Age { get; set; } = 0;
+
+}
