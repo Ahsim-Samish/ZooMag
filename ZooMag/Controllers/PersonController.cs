@@ -7,17 +7,10 @@ using ProductStoreApi.Models;
 [Route("api/[controller]")]
 public class PersonController : ControllerBase
 {
-
+    [HttpPost]
     public async Task<ActionResult<Person>> GetUsers(Person request)
     {
-        Person person = new Person
-        {
-            BirthDate = new DateOnly(2006, 5, 8),
-            Name = "Александр",
-            MiddleName = "Петрович",
-            LastName = "Овечкин"
-
-        };
+        Person person = new Person();
         if (request != null)
         {
             if (!string.IsNullOrWhiteSpace(request.Name) && request.Name != "string")
