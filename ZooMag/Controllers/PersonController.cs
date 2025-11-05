@@ -47,20 +47,5 @@ public class PersonController : ControllerBase
 
         return person;
     }
-    [HttpPost("Age")]
-    public async Task<ActionResult<Person>> GetUser1s(Person request)
-    {
-        Person person = request;
-        DateOnly today = DateOnly.FromDateTime(DateTime.Today);
-        int age = today.Year - person.BirthDate.Year;
-
-        if (person.BirthDate > today.AddYears(-age))
-        {
-            age--;
-        }
-
-
-        person.Age = age;
-        return person;
-    }
+    
 }
