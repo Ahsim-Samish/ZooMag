@@ -42,5 +42,10 @@ public class PersonController : ControllerBase
 
         return person;
     }
+    [HttpGet]
+    public async Task<ActionResult<Person>> Get(Person request)
+    {
+        return request;
+    }
+
 }
-    
